@@ -13,13 +13,40 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body>
+<body class="bg-dark">
     <div id="app">
+        <h1 class="fw-semibold text-center m-5 text-danger-emphasis">ToDo List</h1>
+        <div class="container d-flex align-items-center justify-content-center">
+            <div class="card shadow">
+                <div class="card-header d-flex align-items-center justify-content-between">
+                    <input class="input-group" type="text">
+                    <button class="btn btn-outline-primary m-2">Aggiungi</button>
+                </div>
+                <div v-for="todo in listToDo" class="card-body">
+                    <div class="row">
+                        <div class="col-8 fw-semibold border-bottom">
+                            - {{todo.text}}
+                        </div>
+                        <div class="col-2">
+                            <button class="btn btn-outline-success">&check;</button>
+    
+                        </div>
 
-        <div class="container">
+                        <div class="col-2">
+                            <button class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
+    
+                        </div>
+
+                    </div>
 
 
-            
+
+                </div>
+
+            </div>
+
+
+
         </div>
 
 
