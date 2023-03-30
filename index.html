@@ -13,14 +13,14 @@
     <link rel="stylesheet" href="./css/style.css">
 </head>
 
-<body class="bg-dark">
+<body class="bg-info-subtle">
     <div id="app">
-        <h1 class="fw-semibold text-center m-5 text-danger-emphasis">Vue To Do List</h1>
+        <h1 class="fw-semibold text-center m-5 text-danger">Vue To Do List</h1>
         <div class="container d-flex align-items-center justify-content-center">
             <div class="card shadow">
                 <div class="card-header d-flex align-items-center justify-content-between">
                     <input v-model="newItemText" @keyup.enter="addItem" class="input-group" type="text">
-                    <button @click="addItem" class="btn btn-outline-primary m-2">Aggiungi</button>
+                    <button @click="addItem" class="btn btn-outline-primary m-2 ">Aggiungi</button>
                 </div>
                 <div v-if="listToDo.length > 0">
                     <div v-for="(todo, index) in listToDo" class="card-body">
