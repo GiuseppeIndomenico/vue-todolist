@@ -22,26 +22,28 @@
                     <input v-model="newItemText" @keyup.enter="addItem" class="input-group" type="text">
                     <button @click="addItem" class="btn btn-outline-primary m-2">Aggiungi</button>
                 </div>
-                <div v-for="(todo, index) in listToDo" class="card-body">
-                    <div class="row">
-                        <div class="col-8 fw-semibold border-bottom">
-                            - {{todo.text}}
+                <div v-if="listToDo.length > 0">
+                    <div v-for="(todo, index) in listToDo" class="card-body">
+                        <div class="row">
+                            <div class="col-8 fw-semibold border-bottom">
+                                - {{todo.text}}
+                            </div>
+                            <div class="col-2">
+                                <button class="btn btn-outline-success">&check;</button>
+                            </div>
+                            <div class="col-2">
+                                <button @click="deleteItem(index)" class="btn btn-outline-danger">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="col-2">
-                            <button class="btn btn-outline-success">&check;</button>
-    
-                        </div>
-
-                        <div class="col-2">
-                            <button @click="deleteItem(index)" class="btn btn-outline-danger"><i class="fa-solid fa-trash-can"></i></button>
-    
-                        </div>
-
                     </div>
-
-
-
                 </div>
+                <div v-else class="card-body">
+                    <h4 class="fw-semibold">La tua lista di cose da fare è vuota!...</h4>
+                    <h5 class="fw-semibold"> Bravo Sfaccendato!</h5>
+                </div>
+
 
             </div>
 
