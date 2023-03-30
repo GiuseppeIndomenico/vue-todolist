@@ -6,7 +6,7 @@ createApp({
             listToDo: [
                 {
                     text: "Finire L'esercizio",
-                    done: false
+                    done: true
                 },
                 {
                     text: "Comprendere la lezione",
