@@ -30,6 +30,9 @@ createApp({
 
         deleteItem(index) {
             this.listToDo.splice(index, 1);
+        },
+        doneItem(index){
+            this.listToDo[index].done=true;
         }
 
 

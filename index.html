@@ -25,11 +25,11 @@
                 <div v-if="listToDo.length > 0">
                     <div v-for="(todo, index) in listToDo" class="card-body">
                         <div class="row">
-                            <div class="col-8 fw-semibold border-bottom">
-                                - {{todo.text}}
+                            <div class="col-8 fw-semibold border-bottom" v-bind:class="{ check: todo.done }">
+                                <span>- {{todo.text}}</span>
                             </div>
                             <div class="col-2">
-                                <button class="btn btn-outline-success">&check;</button>
+                                <button @click="doneItem(index)" class="btn btn-outline-success">&check;</button>
                             </div>
                             <div class="col-2">
                                 <button @click="deleteItem(index)" class="btn btn-outline-danger">
@@ -40,8 +40,7 @@
                     </div>
                 </div>
                 <div v-else class="card-body">
-                    <h4 class="fw-semibold">La tua lista di cose da fare è vuota!...</h4>
-                    <h5 class="fw-semibold"> Bravo Sfaccendato!</h5>
+                    <h4 class="fw-semibold display-6 text-center ">La tua lista di cose da fare è vuota!... <br>Bravo Sfaccendato!</h4>
                 </div>
 
 

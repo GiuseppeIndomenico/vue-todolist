@@ -1,4 +1,9 @@
 .card{
     width: 600px;
-    
+
+}
+
+.check{
+    text-decoration: line-through;
+    color: gray;
 }
