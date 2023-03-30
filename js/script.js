@@ -12,22 +12,26 @@ createApp({
                     text: "Comprendere la lezione",
                     done: false
                 }
-
             ],
-
-            newItemText:'',
+            newItemText: '',
         }
     },
     methods: {
         addItem() {
-            const newItemText = this.newItemText.trim()
+            newItemText = this.newItemText.trim()
             if (newItemText !== '') {
                 this.listToDo.push({
                     text: newItemText,
                     done: false
                 })
-               this.newItemText = ''
+                this.newItemText = ''
             }
+        },
+
+        deleteItem(index) {
+            this.listToDo.splice(index, 1);
         }
+
+
     }
 }).mount('#app')
